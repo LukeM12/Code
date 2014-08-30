@@ -1,1 +1,1 @@
-var app = angular.module('MainForm',['mainControl','mainService']);
+var app = angular.module('MainForm', []);
