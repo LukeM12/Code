@@ -13,7 +13,7 @@ module.exports = function(app) {
     app.get('/api/submission', function(req, res){
             //mongoose case
             console.log('hello world');
-            res.send('this guy');
+            //res.send('this guy');
             
             //Use mongoose to create a document in our model
             Applicants.create({ a : 'this' }, function(err, applicant) {
@@ -32,7 +32,6 @@ module.exports = function(app) {
             		}
             		res.json(applicant);
             		//res.json(applicants);
-            		console.log("This is happening " + port);
             	});
             });
                             
