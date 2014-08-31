@@ -1,18 +1,30 @@
-app.controller("MainController", function($scope, $http){
+app.controller("MainController", function($scope, $http, Sub){
 		$scope.understand = "I now understand how scope works";
-	
+	    
        $scope.sendCall = function(){         
+            $scope.understand = Sub.post();//'/api/submission', $scope.user)
+              //.success(function(data) {
+			//	$scope.understand = data;
+             // });
+        }
+});
+
+app.factory('Sub', function($http){
+        return {
+            post : function(){ return 'Hello World'; }
+            /*    return $http.post('/api/submission', applicantData);
+            }*/
+        }
+});
+
+
             //$scope.understand = "hello world";
             /*$http.get('api/submission').success(function(data) {
             	$scope.
-            });*/
-            $http.post('/api/submission', $scope.user)
-              .success(function(data) {
-				$scope.understand = data;
+            });
                 //var a = angular.copy($scope.user);
                 //$scope.understand = a.name;
                 //$scope.understand = data;
-              });
             /*$http.post('api/submission', user)
               .success(function(data) {
 				var a = angular.copy($scope.user);
@@ -32,5 +44,4 @@ app.controller("MainController", function($scope, $http){
 				 $scope.understand = data;
                  $scope.message = 'this is 2';
   				});*/
-        }
-});
+
