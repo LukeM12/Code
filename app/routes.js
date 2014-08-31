@@ -44,7 +44,7 @@ module.exports = function(app) {
                res.send(err)
             }
 	    console.log(req.body);
-            res.send('Your Request has been submitted. Thank you!');
+            res.send('hello world');
         });
     });
         //This is where we configure the data to be in mongoose
