@@ -1,4 +1,4 @@
 module.exports = {
-        
-        url: 'mongodb://localhost:27017/test'
+        //So we are using just test
+        url: 'mongodb://localhost:27017/submissions'
 }

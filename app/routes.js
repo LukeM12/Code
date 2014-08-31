@@ -36,6 +36,16 @@ module.exports = function(app) {
             });
                             
     });
+
+    app.post('/api/submission', function(req, res){
+        Applicants.create(req.body, function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+            res.send('Your Request has been submitted. Thank you!');
+        });
+    });
+        //This is where we configure the data to be in mongoose
 }
             /*Applicants.create({ a : 'this' }, function(err, applicant) {
             	if(err){
@@ -50,6 +60,7 @@ module.exports = function(app) {
             		res.send('hello world');
             		//res.json(applicants);
             		console.log("This is happening " + port);
+                
             	});
             });*/
             	 /*function(err, res){
