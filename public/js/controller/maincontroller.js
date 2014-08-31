@@ -2,7 +2,7 @@ app.controller("MainController", function($scope, $http, Sub){
 		$scope.understand = "I now understand how scope works";
 	    
        $scope.sendCall = function(){         
-            $scope.understand = Sub.post();//'/api/submission', $scope.user)
+            $scope.understand = Sub.post($scope.user);//'/api/submission', $scope.user)
               //.success(function(data) {
 			//	$scope.understand = data;
              // });
@@ -11,9 +11,9 @@ app.controller("MainController", function($scope, $http, Sub){
 
 app.factory('Sub', function($http){
         return {
-            post : function(){ return 'Hello World'; }
-            /*    return $http.post('/api/submission', applicantData);
-            }*/
+            post : function(applicantData) {
+            	return $http.post('/api/submission', applicantData);
+            }
         }
 });
 

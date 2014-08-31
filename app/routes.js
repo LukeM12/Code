@@ -1,7 +1,9 @@
+//ROUTES.JS
+
 var Applicants = require('./model/database');
-Applicants.create({ name: 'Jim Dorothy' }, { position: 'snickers' }, function (err,name , position) {
-  if (err) throw err
-});
+//Applicants.create({ name: 'Jim Dorothy' }, { position: 'snickers' }, function (err,name , position) {
+  //if (err) throw err
+//});
 
 /* This is where we want to do stuff with the database */
 module.exports = function(app) {	
@@ -20,7 +22,6 @@ module.exports = function(app) {
             	if(err){
             		res.send(err);
             	}
-            	
             	//use mongoose to get a list of all applicantsi
                 //By the way, that syntax is correct,
                 //However you can put criteria before the callback
@@ -38,10 +39,11 @@ module.exports = function(app) {
     });
 
     app.post('/api/submission', function(req, res){
-        Applicants.create(req.body, function(err, applicant){
+        Applicants.create( req.body, function(err, applicant){
             if (err){
                res.send(err)
             }
+	    console.log(req.body);
             res.send('Your Request has been submitted. Thank you!');
         });
     });
