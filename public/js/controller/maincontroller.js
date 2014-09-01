@@ -1,6 +1,6 @@
 app.controller("MainController", function($scope, $http, Sub){
 		$scope.understand = "I now understand how scope works";
-	    
+	    //$scope.userForm.show = true;
         	// function to submit the form after all validation has occurred			
 		$scope.sendForm = function(isValid) {
 
@@ -8,7 +8,7 @@ app.controller("MainController", function($scope, $http, Sub){
 			if (isValid) { 
 				alert('our form is amazing');
                 $scope.understand = Sub.post($scope.user);
-			
+		        $scope.userForm = false;
             }
 		};
 
