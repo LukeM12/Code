@@ -5,106 +5,134 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
 		<script src="js/core.js" type="text/javascript"></script>
 		    
-		<script src="js/controller/maincontroller.js" type="text/javascript"></script>
-    	<script src="js/service/mainservice.js" type="text/javascript"></script>
+		<script src="js/formObject/formControl.js" type="text/javascript"></script>
+    	<script src="js/formObject/formService.js" type="text/javascript"></script>
+    	<script src="js/mainObject/mainControl.js" type="text/javascript"></script>
+    	<script src="js/mainObject/mainService.js" type="text/javascript"></script>
+		
 		<!-- CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
 		<style>
-		    body     { padding-top:30px; }
+	    body     { padding-top:30px; }
+		.sidebar {
+			//display:block;
+			background-color: red;
+			width:30%;
+            height:100%;
+            float:left;
+		}
+		
+		.mainpage {
+			/* block space  */
+			margin-right:-4px;
+			//display:block;
+			float:right;
+			background-color: blue;
+			text-align:left;
+			width:70%;i
+            height: 70%;
+            
+			}
+		.btn-margin-bottom {
+			margin-top:5px;
+    		margin-bottom: 40px;
+		}
 		</style>
 		
 		<!-- JS -->
 	</head>
-    <body ng-app="MainForm" ng-controller="MainController">
-    <div class="container">
+	    
+    <!--Make our app, a MEAN app-->
+<body ng-app="MainForm" >
     
-    <!-- PAGE HEADER -->
-    <div class="page-header">
-        <h1>Software Developer and Test Engineer Application</h1>
-    </div>
-   
-    <!-- FORM -->
-    <form name="userForm" ng-show="userForm" ng-submit="sendForm(userForm.$valid)" novalidate>
+    
+    <div class="container" ng-controller="mainController">
+		<!-- PAGE HEADER -->
+		
+		
+		<div class="page-header">
+		    <h1>App Truth </h1>
+		</div>
+	  
+        <!-- ***********************************HOME PAGE **************************************** -->
+		<div class="container">
+		   <div class="row">
 
-        <!-- USERNAME -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-            <label>Username</label>
-            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
-            <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-            <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
-        </div>
-            
-        <!-- EMAIL -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" ng-model="user.email">
-            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-        </div>
-        
-        <!-- Operating System -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.OS.$invalid && !userForm.OS.$pristine }">
-            <label>What Is Your development Operating System (Example: Windows 7 Professional, Ubuntu 12.04 Desktop, etc..)</label>
-            <input type="text" name="OS" class="form-control" ng-model="user.OS" >
-            <p ng-show="userForm.OS.$invalid && !userForm.OS.$pristine" class="help-block">Please, tell us a bit more about what you like/do/have done in software</p>
-        </div>
-        
-        <!-- Text Editor  -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.editor.$invalid && !userForm.editor.$pristine }">
-            <label>What do you like to code in (notepad++, vim, eclipse) ?</label>
-			<input type="text" name="editor" class="form-control" ng-model="user.editor" >
-            <p ng-show="userForm.editor.$invalid && !userForm.user_description.$pristine" class="help-block">Below 25 characters</p>
-        </div>
-        
-        
-        <!-- Description -->
-        <div class="form-group" ng-class="{ 'has-error' : userForm.user_description.$invalid && !userForm.user_description.$pristine }">
-            <label>Tell us a bit more about what you like/do/have done in software (Min: 25 characters. Internships, Personal Projects, OpenSource...).</label>
-            <textarea rows="6" name="user_description" class="form-control" ng-model="user.description" ng-minlength="50"> </textarea>
-            <p ng-show="userForm.user_description.$invalid && !userForm.user_description.$pristine" class="help-block">Below 25 characters</p>
-        </div>
+			  <div class="col-md-3"  style="background-color: #dedef8; box-shadow: 
+				 inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+				 <h2> News Feed</h2>
+				 <p> ALl of this data will come from a form
+                 </p>
+			  </div>
+
+			  <div class="col-md-9"> 
+				
+				  <div class="row-md-1 text-center">
+					  <h3> What is AppTruth? </h3>
+					  <button type="button" class="btn btn-lg btn-info btn-margin-bottom"> Learn More</button>
+				  </div>  		  
+                  
+                <!-- Contextual button for informational alert messages -->
+				  <div class="row-md-1 text-center"> 
+						<h3> For Businesses </h3>
+                        <button type="button" class="btn btn-lg btn-info btn-margin-bottom">Learn More</button>
+				  </div>  
+				  <!-- Contextual button for informational alert messages -->
+				  <div class="row-md-1 text-center" > 
+					  <h3> For Applicants </h3>
+					  <button type="button" ng-click=showForm()  class="btn btn-lg btn-info btn-margin-bottom"> Learn More</button>
+				  </div>  	
+                  	
+		   	  </div>
+		</div>
+        <!-- *********************************** END HOME PAGE **************************************** -->
         
 
+		<!-- ********************************************** DEVELOPER/TEST FORM ************************************ -->
+		<form name="userForm" ng-hide="userForm" ng-submit="sendForm(userForm.$valid)" ng-controller="formController "novalidate>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-        
+		    <!-- USERNAME -->
+		    <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+		        <label>Username</label>
+		        <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
+		        <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+		        <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+		    </div>
+		        
+		    <!-- EMAIL -->
+		    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+		        <label>Email</label>
+		        <input type="email" name="email" class="form-control" ng-model="user.email">
+		        <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+		    </div>
+		    
+		    <!-- Operating System -->
+		    <div class="form-group" ng-class="{ 'has-error' : userForm.OS.$invalid && !userForm.OS.$pristine }">
+		        <label>What Is Your development Operating System (Example: Windows 7 Professional, Ubuntu 12.04 Desktop, etc..)</label>
+		        <input type="text" name="OS" class="form-control" ng-model="user.OS" >
+		        <p ng-show="userForm.OS.$invalid && !userForm.OS.$pristine" class="help-block">Please, tell us a bit more about what you like/do/have done in software</p>
+		    </div>
+		    
+		    <!-- Text Editor  -->
+		    <div class="form-group" ng-class="{ 'has-error' : userForm.editor.$invalid && !userForm.editor.$pristine }">
+		        <label>What do you like to code in (notepad++, vim, eclipse) ?</label>
+				<input type="text" name="editor" class="form-control" ng-model="user.editor" >
+		        <p ng-show="userForm.editor.$invalid && !userForm.user_description.$pristine" class="help-block">Below 25 characters</p>
+		    </div>
+		    
+		    
+		    <!-- Description -->
+		    <div class="form-group" ng-class="{ 'has-error' : userForm.user_description.$invalid && !userForm.user_description.$pristine }">
+		        <label>Tell us a bit more about what you like/do/have done in software (Min: 25 characters. Internships, Personal Projects, OpenSource...).</label>
+		        <textarea rows="6" name="user_description" class="form-control" ng-model="user.description" ng-minlength="50"> </textarea>
+		        <p ng-show="userForm.user_description.$invalid && !userForm.user_description.$pristine" class="help-block">Below 25 characters</p>
+		    </div>
+        	<button type="submit" class="btn btn-primary">Submit</button>
     </form>
+	<!-- ********************************************** END  FORM ************************************ -->
 
-</div>
+	</div>
 </body>
 </html>
 
-
-
-
-<!--DOCTYPE html>
-<html>
-<head>
-	<title>Learning AngularJS</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>
-	<script src="js/core.js" type="text/javascript"></script>
-    
-	<script src="js/controller/maincontroller.js" type="text/javascript"></script>
-    	<script src="js/service/mainservice.js" type="text/javascript"></script>
-    	
-</head>
-<body ng-app='MainForm'>
-		<div id='content' ng-controller='MainController'>
-			<p>{{understand}} </p>
-
-		    <form name="userForm" novalidate class="simple-form" ng-submit="submitForm(userForm.$valid)" novalidate> 
-		           
-		      Name: <input type = "text" ng-model = "user.name" value="name"><br />
-		      Email: <input type = "email" ng-model = "user.email" required><br />
-		      Position: <input type = "radio" ng-model = "user.position" required><br>Software Developer Engineer<br />
-		                <input type = "radio" ng-model = "user.position"><br>Program Manager <br />
-		      Description: <input type = "text" ng-model = "user.description"><br />
-		      Operating System Environment: <input type = "text" ng-model = "user.OS"><br />
-		      Text Editor Environment: <input type = "text" ng-model = "user.editor"><br />
-		    </form>
-
-		    <button ng-click="sendCall(userForm.$valid)"> Submit  </button>
-		
-		</div>
-</body>
-</html-->
