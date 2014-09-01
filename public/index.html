@@ -43,7 +43,7 @@
     <!-- =================================================================== -->
     
     <!-- pass in the variable if our form is valid or invalid -->
-    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+    <form name="userForm" ng-submit="sendForm(userForm.$valid)" novalidate>
 
         <!-- USERNAME -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
@@ -87,64 +87,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         
     </form>
-    
-    <!-- =================================================================== -->
-    <!-- VALIDATION TABLES ================================================= -->
-    <!-- =================================================================== -->
-    <div class="page-header"><h1>Validation Tables</h1></div>
-    
-    <div class="row">
-        <div class="col-xs-3">
-            <h3>Form</h3>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td ng-class="{ success: userForm.$valid, danger: userForm.$invalid }">Valid</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.$pristine, danger: !userForm.$pristine }">Pristine</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.$dirty }">Dirty</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div class="col-xs-3">
-            <h3>Username</h3>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td ng-class="{ success: userForm.username.$valid, danger: userForm.username.$invalid }">Valid</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.username.$pristine, danger: !userForm.username.$pristine }">Pristine</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.username.$dirty }">Dirty</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-xs-3">
-            <h3>Email</h3>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td ng-class="{ success: userForm.email.$valid, danger: userForm.email.$invalid }">Valid</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.email.$pristine, danger: !userForm.email.$pristine }">Pristine</td>
-                    </tr>
-                    <tr>
-                        <td ng-class="{ success: userForm.email.$dirty }">Dirty</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
 </div>
 </body>
 </html>
