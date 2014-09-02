@@ -3,30 +3,38 @@ var app = angular.module('MainForm', []);
 
 /* Configure the dynamic content to go info angularjs */
 app.config(function ($routeProvider) {
-	$routeProvider.when('/', 
+	$routeProvider.
+	when('/form', 
 		{
 			templateUrl:'js/formObject/form.html',
 			controller:'formController'
 		}
-	)
+	).
+	when('/home', 
+		{
+			templateUrl:'js/home/home.html',
+			controller:'mainController'
+		}
+	).
+	otherwise({redirectTo: '/home'});
 });
 /* Configure the Angular Controller for the form, and inject the submission service */
-/*app.controller("formController", function($scope, $http, Sub){
+app.controller("mainController", function($scope, $http, Main){
 		$scope.understand = "cool";
-
-		$scope.sendForm = function(isValid){
-			Sub.post($scope.user);
+		$scope.showForm = function(){
+			alert('hello world');
+			$http.get('/form');
 		}
-});*/
+});
 
 /* Configure the service for form application submissions */
 //TODO, expand this for all the kinds of posts of forms you will be receiving (marketing, PM etc)
-/*app.factory('Sub', function($http){
+app.factory('Main', function($http){
         return {
-            post : function(applicantData) {
-            	return $http.post('/api/submission', applicantData);
+            get : function() {
+            	return $http.get('/form');
             }
         }
-});*/
+});
 
 
