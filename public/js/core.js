@@ -6,13 +6,13 @@ app.config(function ($routeProvider) {
 	$routeProvider.
 	when('/form', 
 		{
-			templateUrl:'js/formObject/form.html',
+			templateUrl:'views/form.html',
 			controller:'formController'
 		}
 	).
 	when('/home', 
 		{
-			templateUrl:'js/home/home.html',
+			templateUrl:'views/home.html',
 			controller:'mainController'
 		}
 	).
