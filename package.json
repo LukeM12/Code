@@ -1,0 +1,13 @@
+{
+	"name": "AppTruthwebpage",
+	"version" : "1.0.0",
+    "description": "This app is used to inter-business communication amongst AppTruth stakeholders",
+    "main": "server.js",
+    "author":"Luke Morrison",
+	"dependencies": {
+		"express": "~4.0.0",
+        "mongoose": "~3.6.2",
+        "morgan": "~1.2.2",
+        "method-override":"~2.1.2"
+	}
+}
