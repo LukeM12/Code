@@ -1,0 +1,59 @@
+//ROUTES.JS
+
+var Applicants = require('./model/database');
+
+/* This is where we want to do stuff with the database */
+module.exports = function(app) {	
+	app.get('/', function(req, res) {
+			res.sendfile('./public/index.html'); 
+            	
+    });
+    
+    /* Pass the five most recent items in the news to the feed */
+    app.get('/api/newsfeed', function(req, res){
+        Applicants.find(function(err, docs){
+            if(err){
+                res.send(err);
+            }
+            
+            //res.send('hello world');
+            console.log('hoorah!');
+        });
+    });
+    
+
+    app.get('/api/submission', function(req, res){
+            
+            //Use mongoose to create a document in our model
+            Applicants.create({ a : 'this' }, function(err, applicant) {
+            	if(err){
+            		res.send(err);
+            	}
+            	//use mongoose to get a list of all applicantsi
+                //By the way, that syntax is correct,
+                //However you can put criteria before the callback
+                //To specify the document/s in the callback 
+                //function as the second parameter. 
+            	Applicants.find(function(err, applicant){
+            		if(err){
+            			res.send(err);
+            		}
+            		res.json(applicant);
+            		//res.json(applicants);
+            	});
+            });
+                            
+    });
+    
+
+    app.post('/api/submission', function(req, res){
+        Applicants.create( req.body, function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+	    console.log(req.body);
+            res.send('hello world');
+        });
+    });
+
+}

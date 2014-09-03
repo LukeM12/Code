@@ -20,11 +20,9 @@ app.config(function ($routeProvider) {
 });
 /* Configure the Angular Controller for the form, and inject the submission service */
 app.controller("mainController", function($scope, $http, Main){
-		$scope.understand = "cool";
-		$scope.showForm = function(){
-			alert('hello world');
-			$http.get('/form');
-		}
+		alert(document.url + '/api/foobar failed!');
+        $scope.News = Main.get();
+        //document.URL; 
 });
 
 /* Configure the service for form application submissions */
@@ -32,7 +30,7 @@ app.controller("mainController", function($scope, $http, Main){
 app.factory('Main', function($http){
         return {
             get : function() {
-            	return $http.get('/form');
+            	return $http.get('/api/foobar');
             }
         }
 });

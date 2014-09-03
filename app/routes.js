@@ -6,13 +6,23 @@ var Applicants = require('./model/database');
 //});
 
 /* This is where we want to do stuff with the database */
-module.exports = function(app) {	
+var routes = function(app) {	
 	app.get('/', function(req, res) {
 			res.sendfile('./public/index.html'); 
             	
     });
+    
+    app.get('/api/foo', function(req, res){
+          res.send('hello world');
+    });
 
-    app.get('/api/submission', function(req, res){
+    app.get('/api/other/foobar', function(req, res){
+            //mongoose case
+                            
+            res.send('hello world');
+    });
+
+   app.get('/api/submission', function(req, res){
             //mongoose case
             console.log('hello world');
             //res.send('this guy');
@@ -49,6 +59,7 @@ module.exports = function(app) {
     });
         //This is where we configure the data to be in mongoose
 }
+module.exports = routes;
             /*Applicants.create({ a : 'this' }, function(err, applicant) {
             	if(err){
             		res.send(err);
