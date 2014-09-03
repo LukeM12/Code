@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var app     = express();
 var port    = 	process.env.PORT || 8080;
 
+var database = require('./config/database'); 
 
 var morgan   = require('morgan');
 var bodyParser = require('body-parser');
@@ -14,16 +15,13 @@ var methodOverride = require('method-override');
 // ROUTES
 // ==============================================
 
-
+mongoose.connect(database.url); 	
 // sample route with a route the way we're used to seeing it
 app.get('/sample', function(req, res) {
 	res.send('this is a sample!');	
 });
 var router = express.Router();
-
 require('./app/routes.js')(router);
-
-// we'll create our routes here
 
 // apply the routes to our application
 app.use('/', router);
