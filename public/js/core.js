@@ -1,6 +1,6 @@
 var app = angular.module('AppTruth', []);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 	$routeProvider.
 	when('/', 
 		{
@@ -13,7 +13,8 @@ app.config(function ($routeProvider) {
 			template:'hello world'
 		}
 	).
-	otherwise({template: 'this does not exist'});
+	otherwise({templateUrl: 'views/home.html'});
+	$locationProvider.html5Mode(true);
 });
 
 /* Configure the Angular Controller for the form, and inject the submission service */

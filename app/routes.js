@@ -27,7 +27,7 @@ module.exports = function(router){
     
     router.get('/foobar1', function(req, res) {
         //Let us try a database operation
-           busApplicants.create({ name : 'this', email: 'luc785@hotmail.com' }, function(err, applicant) {
+           busApplicants.create({ name : 'THIS WORKED BITCH', email: 'luc785@hotmail.com' }, function(err, applicant) {
             	if(err){
             		res.send(err);
             	}
@@ -45,6 +45,7 @@ module.exports = function(router){
 
     // about page route (http://localhost:8080/about)
     router.get('/about', function(req, res) {
+    	alert('check me');
         res.send('im the about page!');	
     });
 

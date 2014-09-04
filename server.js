@@ -26,6 +26,8 @@ require('./app/routes.js')(router);
 
 // apply the routes to our application
 app.use('/', router);
+app.use('/#/about', router);
+app.use('/#/foobar1', router);
 
 
 
