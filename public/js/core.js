@@ -8,9 +8,29 @@ app.config(function ($routeProvider, $locationProvider) {
 			controller:'mainController'
 		}
 	).
-		when('/pizza', 
+	when('/dev', 
 		{
-			template:'hello world'
+			templateUrl:'views/dev.html'
+		}
+	).
+	when('/test', 
+		{
+			templateUrl:'views/test.html'
+		}
+	).
+	when('/pm', 
+		{
+			templateUrl:'views/pm.html'
+		}
+	).
+	when('/mark', 
+		{
+			templateUrl:'views/mark.html'
+		}
+	).
+	when('/bus', 
+		{
+			templateUrl:'views/mark.html'
 		}
 	).
 	otherwise({templateUrl: 'views/home.html'});

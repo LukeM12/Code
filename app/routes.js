@@ -15,16 +15,71 @@ module.exports = function(router){
         next();	
     });
 
-    // home page route (http://localhost:8080)
+	/* The initial conditions for the html page */
     router.get('/', function(req, res) {
         res.sendfile('./public/index.html'); 	
     });
 
-    router.get('/foobar', function(req, res) {      
-        res.send('im the home page!');	
+	/* 		Configure the NewsFeed	 			*/
+    router.get('/api/newsfeed', function(req, res) {      
+        res.send('im the news page!');	
     });
     
+    //TODO FIX POST
+    router.post('/api/newsfeed', function(req, res) {      
+        res.send('im the home page!');	
+    });
+    /********************************************/
+    /*				End News Feed				*/
+    /********************************************/
     
+    
+    
+    /********************************************/
+    /*		    API/Database Routing			*/
+    /********************************************/
+    
+    /* 		Configure the DEVELOPER form Page 	*/
+    router.get('/api/devform', function(req, res) {      
+        res.send('im the devpage!');	
+    });
+    router.post('/api/devform', function(req, res) {      
+        res.send('im the dev page!');	
+    });
+    
+    /* 		Configure the TESTER form Page 		*/
+    router.get('/api/testform', function(req, res) {      
+        res.send('im the test page!');	
+    });
+    router.post('/testform', function(req, res) {      
+        res.send('im the test page!');	
+    });
+    
+    /* 	Configure the PROGRAM MANAGER form Page */
+    router.get('/api/pmform', function(req, res) {      
+        res.send('im the pm get page!');	
+    });
+    router.post('/api/pmform', function(req, res) {      
+        res.send('im the home page!');	
+    });
+        
+    /* 	Configure the MARKETING BASE	 form Page */
+    router.get('/api/markform', function(req, res) {      
+        res.send('im the marketing post page! ');	
+    });    
+    router.post('/api/markform', function(req, res) {      
+        res.send('im the test get page!');	
+    });
+    
+    /* 	Configure the BUSINESS			 form Page */
+    router.get('/api/busform', function(req, res) {      
+        res.send('im the business get page!');	
+    });
+    router.post('/testform', function(req, res) {      
+        res.send('im the business post page! and here is your data' + req.body);	
+    });
+    
+    // Up until here everything is the exact same.
     router.get('/foobar1', function(req, res) {
         //Let us try a database operation
            busApplicants.create({ name : 'THIS WORKED BITCH', email: 'luc785@hotmail.com' }, function(err, applicant) {
