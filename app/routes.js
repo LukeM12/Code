@@ -1,4 +1,8 @@
 
+busApplicants = require('./model/busApplicant');
+markApplicants = require('./model/markApplicant');
+
+
 // get an instance of router
 // route middleware that will happen on every request
 module.exports = function(router){
@@ -13,13 +17,31 @@ module.exports = function(router){
 
     // home page route (http://localhost:8080)
     router.get('/', function(req, res) {
-        res.send('im the home page!');	
+        res.sendfile('./public/index.html'); 	
     });
 
-    router.get('/foobar', function(req, res) {
+    router.get('/foobar', function(req, res) {      
         res.send('im the home page!');	
     });
     
+    
+    router.get('/foobar1', function(req, res) {
+        //Let us try a database operation
+           busApplicants.create({ name : 'this', email: 'luc785@hotmail.com' }, function(err, applicant) {
+            	if(err){
+            		res.send(err);
+            	}
+
+            });
+           markApplicants.create({ name : 'marketing', email: 'luc785@hotmail.com' }, function(err, applicant) {
+            	if(err){
+            		res.send(err);
+            	}
+            });
+            res.send('hello world');
+            //Now we want to use the data structures intelligently
+    });
+
 
     // about page route (http://localhost:8080/about)
     router.get('/about', function(req, res) {

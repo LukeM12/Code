@@ -5,7 +5,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var app     = express();
-var port    = 	process.env.PORT || 8080;
+var port    = 	process.env.PORT || 8089;
 
 var database = require('./config/database'); 
 
@@ -23,8 +23,13 @@ app.get('/sample', function(req, res) {
 var router = express.Router();
 require('./app/routes.js')(router);
 
+
 // apply the routes to our application
 app.use('/', router);
+
+
+
+app.use(express.static(__dirname + '/public')); 	
 
 // login routes
 app.route('/login')
