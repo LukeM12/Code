@@ -1,9 +1,11 @@
 
+testApplicants = require('./model/testApplicant');
+devApplicants = require('./model/devApplicant');
+pmApplicants = require('./model/pmApplicant');
 busApplicants = require('./model/busApplicant');
 markApplicants = require('./model/markApplicant');
-devApplicants = require('./model/devApplicant');
-testApplicants = require('./model/testApplicant');
-pmApplicants = require('./model/pmApplicant');
+
+
 
 
 
@@ -87,22 +89,35 @@ module.exports = function(router){
 	   		console.log('User Created For PM Role');
         });
     });
+
+    /* 	Configure the BUSINESS			 form Page */
+    router.get('/api/busform', function(req, res) {      
+        res.send('im the business get page!');	
+    });
+
+    router.post('/api/busform', function(req, res) {      
+        busApplicants.create( req.body , function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+	   		console.log('User Created For Business Role');
+        });
+    });
         
     /* 	Configure the MARKETING BASE	 form Page */
     router.get('/api/markform', function(req, res) {      
         res.send('im the marketing post page! ');	
     });    
     router.post('/api/markform', function(req, res) {      
-        res.send('im the test get page!');	
+        markApplicants.create( req.body , function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+	   		console.log('User Created For Marketing Role');
+        });
+    
     });
     
-    /* 	Configure the BUSINESS			 form Page */
-    router.get('/api/busform', function(req, res) {      
-        res.send('im the business get page!');	
-    });
-    router.post('/testform', function(req, res) {      
-        res.send('im the business post page! and here is your data' + req.body);	
-    });
     
     // Up until here everything is the exact same.
     router.get('/foobar1', function(req, res) {

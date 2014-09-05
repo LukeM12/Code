@@ -2,6 +2,7 @@
 var mongoose = require('mongoose');
 //
 
-var schema = new mongoose.Schema({ name : 'string', position: 'string', email:'string', description: 'string', editor:'string', OS:'string'}); 
+var schema = new mongoose.Schema({ username : 'string', email:'string', expertise:'string', major: 'string', description: 'string'}); 
 
 module.exports = mongoose.model('markApplicant', schema);
+

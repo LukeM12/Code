@@ -10,16 +10,16 @@ app.config(function ($routeProvider, $locationProvider) {
 			controller:'mainController'
 		}
 	).
-	when('/dev', 
-		{
-			templateUrl:'views/dev.html',
-			controller: 'devController'
-		}
-	).
 	when('/test', 
 		{
 			templateUrl:'views/test.html',
 			controller: 'testController'
+		}
+	).
+	when('/dev', 
+		{
+			templateUrl:'views/dev.html',
+			controller: 'devController'
 		}
 	).
 	when('/pm', 
@@ -29,14 +29,16 @@ app.config(function ($routeProvider, $locationProvider) {
 		
         }
 	).
-	when('/mark', 
-		{
-			templateUrl:'views/mark.html'
-		}
-	).
 	when('/bus', 
 		{
-			templateUrl:'views/mark.html'
+			templateUrl:'views/bus.html',
+            controller:'busController'
+		}
+	).
+	when('/mark', 
+		{
+			templateUrl:'views/mark.html',
+            controller:'markController'
 		}
 	).
 	otherwise({templateUrl: 'views/home.html'});
