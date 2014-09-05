@@ -26,11 +26,12 @@
         </div>
         <!-- Description -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.user_description.$invalid && !userForm.user_description.$pristine }">
-            <label>Tell us a bit more about what you like/do/have done in development or test (Min: 25 characters. Internships, Personal Projects, OpenSource...).</label>
+            <label>Tell us a bit more about what you like/do/have done in software (Min: 25 characters. Internships, Personal Projects, OpenSource...).</label>
             <textarea rows="6" name="user_description" class="form-control" ng-model="user.description" ng-minlength="50"> </textarea>
             <p ng-show="userForm.user_description.$invalid && !userForm.user_description.$pristine" class="help-block">Below 25 characters</p>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <h1>{{understand}}</h1>
+
 

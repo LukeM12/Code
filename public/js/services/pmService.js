@@ -1,9 +1,10 @@
-app.factory('Dev', function($http){
+app.factory('Pm', function($http){
         return {
             post : function(applicantData) {	
-            	return $http.post('/api/devform', applicantData);
+            	return $http.post('/api/pmform', applicantData);
             }      
         }
 });
+
 
 

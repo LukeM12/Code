@@ -1,5 +1,7 @@
 var app = angular.module('AppTruth', []);
 
+
+
 app.config(function ($routeProvider, $locationProvider) {
 	$routeProvider.
 	when('/', 
@@ -16,13 +18,16 @@ app.config(function ($routeProvider, $locationProvider) {
 	).
 	when('/test', 
 		{
-			templateUrl:'views/test.html'
+			templateUrl:'views/test.html',
+			controller: 'testController'
 		}
 	).
 	when('/pm', 
 		{
-			templateUrl:'views/pm.html'
-		}
+			templateUrl:'views/pm.html',	
+			controller: 'pmController'
+		
+        }
 	).
 	when('/mark', 
 		{
@@ -37,4 +42,25 @@ app.config(function ($routeProvider, $locationProvider) {
 	otherwise({templateUrl: 'views/home.html'});
 	$locationProvider.html5Mode(true);
 });
+
+/* Configure the Angular Controller for the form, and inject the submission service */
+app.controller("testController", function($scope, $http, Test){
+    $scope.sendForm = function(isValid) {
+        if (isValid) { 
+
+            Dev.post($scope.user);
+        
+        }
+    };
+});
+
+
+app.factory('Test', function($http){
+        return {
+            post : function(applicantData) {
+            	return $http.post('/foobar1', applicantData);
+            }      
+        }
+});
+
 

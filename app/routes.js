@@ -1,6 +1,12 @@
 
 busApplicants = require('./model/busApplicant');
 markApplicants = require('./model/markApplicant');
+devApplicants = require('./model/devApplicant');
+testApplicants = require('./model/testApplicant');
+pmApplicants = require('./model/pmApplicant');
+
+
+
 
 
 // get an instance of router
@@ -43,16 +49,30 @@ module.exports = function(router){
     router.get('/api/devform', function(req, res) {      
         res.send('im the devpage!');	
     });
+
     router.post('/api/devform', function(req, res) {      
-        res.send('im the dev page!');	
-    });
+        devApplicants.create( req.body, function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+	    	console.log(req.body);
+            res.send('hello world');
+        });
+	});
     
     /* 		Configure the TESTER form Page 		*/
     router.get('/api/testform', function(req, res) {      
         res.send('im the test page!');	
     });
-    router.post('/testform', function(req, res) {      
-        res.send('im the test page!');	
+    
+    router.post('/api/testform', function(req, res) {      
+        testApplicants.create( req.body, function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+            //FIXME
+            res.send('hello world');
+        });
     });
     
     /* 	Configure the PROGRAM MANAGER form Page */
@@ -60,7 +80,12 @@ module.exports = function(router){
         res.send('im the pm get page!');	
     });
     router.post('/api/pmform', function(req, res) {      
-        res.send('im the home page!');	
+        pmApplicants.create( req.body , function(err, applicant){
+            if (err){
+               res.send(err)
+            }
+	   		console.log('User Created For PM Role');
+        });
     });
         
     /* 	Configure the MARKETING BASE	 form Page */

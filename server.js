@@ -15,6 +15,13 @@ var methodOverride = require('method-override');
 // ROUTES
 // ==============================================
 
+app.use(morgan('dev')); // log every request to the console
+app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); // parse application/json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
+
+
 mongoose.connect(database.url); 	
 // sample route with a route the way we're used to seeing it
 app.get('/sample', function(req, res) {
@@ -26,8 +33,11 @@ require('./app/routes.js')(router);
 
 // apply the routes to our application
 app.use('/', router);
+app.use('/#/api/devform', router);
+app.use('/#/api/testform', router);
 app.use('/#/about', router);
 app.use('/#/foobar1', router);
+
 
 
 

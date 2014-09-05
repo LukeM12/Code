@@ -1,11 +1,9 @@
 
 /* Configure the Angular Controller for the form, and inject the submission service */
-app.controller("devController", function($scope, $http, Dev){
+app.controller("pmController", function($scope, $http, Pm){
     $scope.sendForm = function(isValid) {
         if (isValid) { 
-
-            alert('Hello' + $scope.user.username);
-            $scope.understand = Dev.post($scope.user);
+            $scope.understand = Pm.post($scope.user);
         
         }
     };
