@@ -10,7 +10,8 @@ app.config(function ($routeProvider, $locationProvider) {
 	).
 	when('/dev', 
 		{
-			templateUrl:'views/dev.html'
+			templateUrl:'views/dev.html',
+			controller: 'devController'
 		}
 	).
 	when('/test', 
@@ -36,20 +37,4 @@ app.config(function ($routeProvider, $locationProvider) {
 	otherwise({templateUrl: 'views/home.html'});
 	$locationProvider.html5Mode(true);
 });
-
-/* Configure the Angular Controller for the form, and inject the submission service */
-app.controller("mainController", function($scope, $http, Main){
-
-
-});
-
-
-app.factory('Main', function($http){
-        return {
-            get : function() {
-            	return 'hello world'
-            }
-        }
-});
-
 
