@@ -5,12 +5,6 @@ pmApplicants = require('./model/pmApplicant');
 busApplicants = require('./model/busApplicant');
 markApplicants = require('./model/markApplicant');
 
-
-
-
-
-
-
 // get an instance of router
 // route middleware that will happen on every request
 module.exports = function(router){
@@ -25,10 +19,11 @@ module.exports = function(router){
 
 	/* The initial conditions for the html page */
     router.get('/', function(req, res) {
+	//res.sendfile('./public/views/index.jpeg');	
         res.sendfile('./public/index.html'); 	
     });
 
-	/* 		Configure the NewsFeed	 			*/
+	/* 	Configure the NewsFeed	*/
     router.get('/api/newsfeed', function(req, res) {      
         res.send('im the news page!');	
     });
@@ -38,16 +33,16 @@ module.exports = function(router){
         res.send('im the home page!');	
     });
     /********************************************/
-    /*				End News Feed				*/
+    /*		End News Feed			*/
     /********************************************/
     
     
     
     /********************************************/
-    /*		    API/Database Routing			*/
+    /*		    API/Database Routing	*/
     /********************************************/
     
-    /* 		Configure the DEVELOPER form Page 	*/
+    /* 	Configure the DEVELOPER form Page 	*/
     router.get('/api/devform', function(req, res) {      
         res.send('im the devpage!');	
     });
@@ -60,9 +55,9 @@ module.exports = function(router){
 	    	console.log(req.body);
             res.send('hello world');
         });
-	});
+   });
     
-    /* 		Configure the TESTER form Page 		*/
+    /* 	Configure the TESTER form Page 		*/
     router.get('/api/testform', function(req, res) {      
         res.send('im the test page!');	
     });
@@ -90,7 +85,7 @@ module.exports = function(router){
         });
     });
 
-    /* 	Configure the BUSINESS			 form Page */
+    /* 	Configure the BUSINESS form Page 	*/
     router.get('/api/busform', function(req, res) {      
         res.send('im the business get page!');	
     });

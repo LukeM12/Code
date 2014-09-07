@@ -1,14 +1,28 @@
+<div class="jumbotron">
+	<h1>News</h1> 
+</div>
 
-<!-- ***********************************HOME PAGE **************************************** -->
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>News</h1>
+<div class="jumbotron">
+<div class="paragraphs">
+  	<div class="row">
+       <div class="span4">
+		  <a  href="http://www.carletonmap.com" target="_blank" >
+		  	<img style="float:left" ng-src="http://localhost:8089/views/images/{{ path }}" height=70% width=70%>
+		  </a>
+		   <div class="content-heading"><h3> Carleton GPS </h3></div>
+		  	<p> <font size="2">Carleton leveraged our developers to create a custom GPS for the University day-to-day use. This is being released into production this week.</font></p>
+		</div>
+	</div>
+</div>
+</div>
+      <!--div class="jumbotron">
+        <h1>News</h1>      <div class="modal-body">
         <p></p>
-        <!--p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p-->
+
       </div>
 	<div class="modal-body">
-      <iframe src="http://www.carletonmap.com"   height="170" width="100%"></iframe>
-	</div>
+   <img ng-src="http://localhost:8089/views/images/{{ path }}" widith=50% height=50% /> 
+	</div-->
       
       <!--style="zoom:0.60" frameborder="0" height="20" width="99.6%"-->
 
