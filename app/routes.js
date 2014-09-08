@@ -112,32 +112,13 @@ module.exports = function(router){
         });
     
     });
-    
-    
-    // Up until here everything is the exact same.
-    router.get('/foobar1', function(req, res) {
-        //Let us try a database operation
-           busApplicants.create({ name : 'THIS WORKED BITCH', email: 'luc785@hotmail.com' }, function(err, applicant) {
-            	if(err){
-            		res.send(err);
-            	}
 
-            });
-           markApplicants.create({ name : 'marketing', email: 'luc785@hotmail.com' }, function(err, applicant) {
-            	if(err){
-            		res.send(err);
-            	}
-            });
-            res.send('hello world');
-            //Now we want to use the data structures intelligently
-    });
-
-
+	//API call for "about" if needed
     // about page route (http://localhost:8080/about)
-    router.get('/about', function(req, res) {
+    /*router.get('/api/about', function(req, res) {
     	alert('check me');
         res.send('im the about page!');	
-    });
+    });*/
 
     // route middleware to validate :name
     router.param('name', function(req, res, next, name) {

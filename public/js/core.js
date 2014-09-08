@@ -10,6 +10,11 @@ app.config(function ($routeProvider, $locationProvider) {
 			controller:'mainController'
 		}
 	).
+	when('/contact', 
+		{
+			templateUrl:'views/contact.html'
+		}
+	).
 	when('/about', 
 		{
 			templateUrl:'views/about.html',
@@ -55,7 +60,8 @@ app.config(function ($routeProvider, $locationProvider) {
 
 /* Configure the Angular Controller for the form, and inject the submission service */
 app.controller("mainController", function($scope, $http, Main){
-	$scope.path = "Carletonmap.png";
+	$scope.carletonmap = "Carletonmap.png";
+	$scope.appgroup = "AppGroup.JPG";
 	//$scope.Image1 = Main.get();
 });
 
