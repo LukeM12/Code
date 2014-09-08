@@ -10,6 +10,12 @@ app.config(function ($routeProvider, $locationProvider) {
 			controller:'mainController'
 		}
 	).
+	when('/about', 
+		{
+			templateUrl:'views/about.html',
+            controller:'aboutController'
+		}
+	).
 	when('/test', 
 		{
 			templateUrl:'views/test.html',
@@ -44,6 +50,8 @@ app.config(function ($routeProvider, $locationProvider) {
 	otherwise({templateUrl: 'views/home.html'});
 	$locationProvider.html5Mode(true);
 });
+
+/* I kind of like Main being here instead of a separate file */
 
 /* Configure the Angular Controller for the form, and inject the submission service */
 app.controller("mainController", function($scope, $http, Main){
