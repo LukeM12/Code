@@ -7,6 +7,8 @@
 		
 		<!-- CSS -->
 		<link href = "views/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+		<link href = "views/bootstrap/css/bootstrap.theme.min.css" rel = "stylesheet">
+		<link href = "views/bootstrap/css/bootstrap.css" rel = "stylesheet">
 		<!--link href = "css/styles.css" rel = "stylesheet"-->
 		<base href="/">
 		
@@ -64,17 +66,8 @@
 				                <a class = "dropdown-toggle" data-toggle = "dropdown">Inquire<b class = "caret"></b></a>
 				                <ul class = "dropdown-menu">
 				                    <li><a href = "/home">As an enterprise</a></li>
-				              		<li class = "dropdown">
-								        <a class = "dropdown-toggle" data-toggle = "dropdown">As a Student<b class = "caret"></b></a>
-								        <ul class = "dropdown-menu">
-								            <li><a href = "/bus">Business Associate</a></li>
-								            <li><a href = "/mark">Marketing Associate</a></li>
-								            <li><a href = "/mark">Designer</a></li>
-								            <li><a href = "/dev">Software Developer</a></li>
-								            <li><a href = "/test">Software Developer & Test</a></li>
-								            <li><a href = "/pm"> Program Manager </a></li>
-								        </ul>
-								    </li>
+				                    <li><a href = "/role">As a student</a></li>
+
 				                </ul>
 				            </li>
 				            
@@ -90,13 +83,21 @@
 			<ng-view></ng-view>
 			<!-- END ANGULAR CONTENT -->
 		</div>
-
-		
 	</body>
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src = "views/bootstrap/js/bootstrap.js"></script>
+    
 </html>
 
+<!-- Start for the double dropdown, if that becomes a priority 
+								        <ul class = "dropdown-menu">
+								            <li><a href = "/bus">Business Associate</a></li>
+								            <li><a href = "/mark">Marketing Associate</a></li>
+								            <li><a href = "/mark">Designer</a></li>
+								            <li><a href = "/dev">Software Developer</a></li>
+								            <li><a href = "/test">Software Developer & Test</a></li>
+								            <li><a href = "/pm"> Program Manager </a></li>
+								        </ul-->
 
 			
 

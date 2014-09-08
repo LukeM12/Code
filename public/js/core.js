@@ -21,6 +21,12 @@ app.config(function ($routeProvider, $locationProvider) {
             controller:'aboutController'
 		}
 	).
+	when('/role', 
+		{
+			templateUrl:'views/role.html'
+		}
+	).
+    //FORMS 
 	when('/test', 
 		{
 			templateUrl:'views/test.html',
