@@ -58,6 +58,12 @@ app.config(function ($routeProvider, $locationProvider) {
             controller:'markController'
 		}
 	).
+
+	when('/confirm', 
+		{
+			templateUrl:'views/confirm.html'
+		}
+	).
 	otherwise({templateUrl: 'views/home.html'});
 	$locationProvider.html5Mode(true);
 });
