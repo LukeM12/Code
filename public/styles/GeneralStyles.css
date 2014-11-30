@@ -1,0 +1,125 @@
+.NavBar{
+	position: fixed;
+	float: top;
+
+	height: 100px;
+	width:100%;
+	background-image: url("../views/images/AppTruthBanner.jpg");
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+.waa{
+width: 300px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+	position: fixed;
+	content:url(http://localhost:3000/views/images/campus_map.jpg);
+	 padding-top: 110px;
+
+ padding-left: 20px;
+	height: 100%;
+	width:50%;
+}
+.MapAnimation{
+	position: absolute;
+	float: left;
+	height: 100%;
+	content:url(http://localhost:3000/views/images/campus_map.jpg);
+	width:100%;
+	 padding-top: 110px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+p.about {
+	position: absolute;
+	right : 100px;
+	bottom : 20px;
+	font-size:160%;
+
+}
+p.contact {
+	position: absolute;
+	right : 190px;
+	bottom : 20px;
+	font-size:160%;
+}
+
+button.leftmost{
+	position: fixed;
+	right : 610px;
+	top : 340px;
+	width: 90px;
+	height :30px;
+    border: 2px solid;
+    border-radius: 15px;
+}
+button.middle{
+	position: fixed;
+	right : 390px;
+	top : 340px;
+	width: 90px;
+	height :30px;
+    border: 2px solid;
+    border-radius: 15px;
+}
+button.rightmost{
+	position: fixed;
+	right : 180px;
+	top : 340px;
+	width: 90px;
+	height :30px;
+    border: 2px solid;
+    border-radius: 15px;
+}
+/* This is the content box that switches and passes content */
+#text_content{
+	position: absolute;
+	overflow: scroll;
+	right : 700px;
+	top : 380px;
+	height: 450px;
+	/* right : 170px;
+	top : 380px;*/
+}
+h1.explanation{
+	position: fixed;
+	font-size:320%;
+	height :30px;
+}
+p.explanation_p{
+	position: fixed;
+	font-size:90%;
+}
+/* End switching content box */
+h1.info{
+	position: fixed;
+	font-size:320%;
+	height :30px;
+
+}
+a {
+	position: fixed;
+	float: right;
+}
+/* unvisited link */
+a:link {
+    color: #FF0000;
+
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+

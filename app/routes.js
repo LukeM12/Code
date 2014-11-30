@@ -41,49 +41,21 @@ module.exports = function(router){
     /********************************************/
     /*		    API/Database Routing	*/
     /********************************************/
-    
-    /* 	Configure the DEVELOPER form Page 	*/
-    router.get('/api/devform', function(req, res) {      
-        res.send('im the devpage!');	
+
+    /*  Information and Analytics */
+    router.get('/api/info', function(req, res) {      
+        res.sendfile('./public/info.html');  
     });
 
-    router.post('/api/devform', function(req, res) {      
-        devApplicants.create( req.body, function(err, applicant){
+    router.post('/api/busform', function(req, res) {      
+        busApplicants.create( req.body , function(err, applicant){
             if (err){
                res.send(err)
             }
-	    	console.log(req.body);
-            res.send('hello world');
-        });
-   });
-    
-    /* 	Configure the TESTER form Page 		*/
-    router.get('/api/testform', function(req, res) {      
-        res.send('im the test page!');	
-    });
-    
-    router.post('/api/testform', function(req, res) {      
-        testApplicants.create( req.body, function(err, applicant){
-            if (err){
-               res.send(err)
-            }
-            //FIXME
-            res.send('hello world');
+            console.log('User Created For Business Role');
         });
     });
-    
-    /* 	Configure the PROGRAM MANAGER form Page */
-    router.get('/api/pmform', function(req, res) {      
-        res.send('im the pm get page!');	
-    });
-    router.post('/api/pmform', function(req, res) {      
-        pmApplicants.create( req.body , function(err, applicant){
-            if (err){
-               res.send(err)
-            }
-	   		console.log('User Created For PM Role');
-        });
-    });
+        
 
     /* 	Configure the BUSINESS form Page 	*/
     router.get('/api/busform', function(req, res) {      
@@ -99,26 +71,7 @@ module.exports = function(router){
         });
     });
         
-    /* 	Configure the MARKETING BASE	 form Page */
-    router.get('/api/markform', function(req, res) {      
-        res.send('im the marketing post page! ');	
-    });    
-    router.post('/api/markform', function(req, res) {      
-        markApplicants.create( req.body , function(err, applicant){
-            if (err){
-               res.send(err)
-            }
-	   		console.log('User Created For Marketing Role');
-        });
-    
-    });
 
-	//API call for "about" if needed
-    // about page route (http://localhost:8080/about)
-    /*router.get('/api/about', function(req, res) {
-    	alert('check me');
-        res.send('im the about page!');	
-    });*/
 
     // route middleware to validate :name
     router.param('name', function(req, res, next, name) {

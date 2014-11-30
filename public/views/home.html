@@ -1,53 +1,93 @@
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-<div class="jumbotron">
-	<h1>News</h1> 
+<div class="NavBar">
+  <p class="about">
+  <a href="#about">
+  About
+  </a>
+  </p>
+  <p class="contact">
+  <a href="#contact">
+  Contact
+  </a>
+  </p>
 </div>
+<div ng-controller="QueryController">
+  <button class="rightmost" ng-click="direction()">
+Discovery
+  </button>
+  <button class="middle" ng-click="discovery()">
+Design
+  </button>
+  <button class="leftmost" ng-click="design()">
+Direction
+  </button>
 
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-<div class="jumbotron">
-	<h2>Applications are now OPEN!!</h2>
-    <ul>
-        <li><p>Time: 5-6pm </p></li>
-        <li><p>Date: Monday 15th September 2014 </p></li>
-        <li><p>Location: 4th Floor at Carleton Discovery Centre Room #481 </p></li>
-        <li><p>Description : Live Q&A about the projects</p></li>
-
-
-</div>
-
-<!-- TODO Create a ng-repeat that autogenerates this, and create a flag variable to oscillate the sides that the picture and text content are on. -->
-
-<div class="jumbotron">
-    <div class="paragraphs">
-        <div class="row">
-           <div class="span4">
-              <!--Image -->
-              <a  href="http://www.carletonmap.com" target="_blank" >
-                <img style="float:right" ng-src="http://www.apptruth.ca/views/images/{{ carletonmap }}" height=70% width=70%>
-              </a>
-               <!-- Text -->
-               <div class="content-heading"><h3><a href="http://www.carletonmap.com"> SHIPPING CARLETON GPS! </a></h3></div>
-                <p> <font size="4">Carleton leveraged our developers to create a custom GPS for the University day-to-day use. This is being released into production this week.</font></p>
-            </div>
+        <div id="text_content">
+          <h1 class="explanation">
+          MAPPING MADE SIMPLE
+          </h1>
+            <p class="explanation_p" style="white-space: pre;"><br><br><br><br>
+            {{info}}
+            </p>
+            <br><br><br><br><br><br>
+<p> hello world</p>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<p> hello world</p>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br><p> hello world</p>
+<p> hello world</p>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<p> hello world</p>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br><p> hello world</p>
         </div>
-    </div>
+<div>
+
+</div>
+</div>
+<div class="MapAnimation"> 
+
 </div>
 
 
+<!--div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-<div class="jumbotron">
-    <div class="paragraphs">
-        <div class="row">
-           <div class="span4">
-              <!--Image -->
-                <img style="float:left" ng-src="http://www.apptruth.ca/views/images/{{ appgroup }}" height=70% width=70%>
-               <!-- Text -->
-               <div class="content-heading"><h3><a href="/contact"> Carleton collaboration </a></h3></div>
-                <p> <font size="4">Our application development group worked alongside Carleton web development coordinators, as well as general student administration to iterate on a solid design.</font></p>
-            </div>
-        </div>
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+ 
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://localhost:3000/views/images/campus_map.jpg" alt="...">
+      <div class="carousel-caption">
+ <h2><i> Find your Way</i></h2>
+      </div>
     </div>
-</div>
+    <div class="item">
+      <img src="http://placehold.it/1200x315" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/1200x315" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+ 
 
-
-
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> -->

@@ -23,10 +23,7 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 
 
 mongoose.connect(database.url); 	
-// sample route with a route the way we're used to seeing it
-app.get('/sample', function(req, res) {
-	res.send('this is a sample!');	
-});
+
 var router = express.Router();
 require('./app/routes.js')(router);
 
