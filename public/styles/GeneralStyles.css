@@ -301,3 +301,13 @@ html, body, .Container
 	text-align:center;
 	float:center;
 }
+.video{
+	position:relative;
+	
+	content:url(http://localhost:3000/views/images/circle.jpg);
+	text-align:center;
+	width:70%; 
+    height: auto;
+    margin:0 auto;
+    padding-top:60px;
+}
