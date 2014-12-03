@@ -199,7 +199,7 @@ html, body, .Container
 .Content
 {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
 }
 .Content:after
 {
@@ -228,6 +228,10 @@ html, body, .Container
 {
 	width:50%;
 	float: right;
-    background-color: blue
+    background-color: blue;
+    margin-top: 40px;
+/*     padding-top: 90px;
+     height:100%;
+      z-index: -1;*/
 }
 
