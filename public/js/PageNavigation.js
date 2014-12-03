@@ -9,6 +9,6 @@ function ReduceMap(){
 } 
 
 //Paired with CSS to slide the map over smooth after X seconds, instead of hoverover.
-//setTimeout(function(){
-//	ReduceMap();
-//}, 500);
+setTimeout(function(){
+	ReduceMap();
+}, 2000);

@@ -45,10 +45,11 @@ app.controller('QueryController', ['$scope', function($scope) {
          $scope.info = 'This section is reserved for a specific value proposition and willl serve to\n\t  Gather more information about what the end user of this website seemsn\n\t to find interesting.';
     };
     $scope.design = function() {
-         $scope.info = 'This section is reserved for a specific value proposition and willl serve to\n\t  Gather more information about what the end user of this website seemsn\n\t to find interesting.';
+         $scope.info = 'tHE DESIGN ELEMENT CARES\n\t ';
+         $scope.info += 'Gather more information about what the end user of this website seemsn\n\t to find interesting.';
     };
     $scope.discovery = function() {
-         $scope.info = 'We need to say what the user can discover and what this entails, but really \n\t  is just placeholder text and does not in any way shape or form represent a\n\t an important topic';
+         $scope.info = 'We need to say what the user can discover and what this entails, but really is just placeholder text and does not in any way shape or form represent a\n\t an important topic';
     };
 
     $scope.jalapenoSpicy = function() {
