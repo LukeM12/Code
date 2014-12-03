@@ -14,9 +14,9 @@ width: 300px;
     transition: width 2s;
 	position: fixed;
 	content:url(http://localhost:3000/views/images/campus_map.jpg);
-	 padding-top: 110px;
+	 padding-top: 40px;
 
- padding-left: 20px;
+ padding-left: 5px;
 	height: 100%;
 	width:50%;
 }
@@ -198,19 +198,18 @@ html, body, .Container
 }
 .Content
 {
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
-    .Content:after
-    {
-        content: '';
-        clear: both;
-        display: block;
-    }
-
+.Content:after
+{
+    content: '';
+    clear: both;
+    display: block;
+}
 .Wrapper
 {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -227,7 +226,8 @@ html, body, .Container
 }
 .RightContent
 {
-    background-color: purple;
-    overflow: auto;
+	width:50%;
+	float: right;
+    background-color: blue
 }
 
