@@ -173,6 +173,7 @@ top: 50px;
 left: 1590px;
 background-color: #0CF;
 }
+*
 {
     margin: 0;
     padding: 0;
@@ -187,7 +188,7 @@ html, body, .Container
     {
         content: '';
         height: 100%;
-        float: left;
+        float: right;
     }
 
 .Header
@@ -220,13 +221,13 @@ html, body, .Container
 
 .LeftContent
 {
+    background-color: orange;
+    float: left;
+    margin-left: 10px;
+}
+.RightContent
+{
     background-color: purple;
     overflow: auto;
 }
 
-.RightContent
-{
-    background-color: orange;
-    float: right;
-    margin-left: 10px;
-}
